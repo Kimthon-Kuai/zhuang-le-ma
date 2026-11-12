@@ -1,0 +1,53 @@
+# ========== 密钥与本地配置（绝对不能提交）==========
+.env
+.env.local
+.env.*.local
+!server/.env.example
+
+# ========== 数据库 ==========
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+*.sqlite
+*.sqlite3
+
+# ========== 运行日志 / 截图 ==========
+server/data/
+*.log
+*.png
+!docs/**/*.png
+
+# ========== Python ==========
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# ========== Node / 前端构建产物 ==========
+node_modules/
+dist/
+dist-*
+release/
+*.tsbuildinfo
+.vite/
+
+# ========== Electron 打包 ==========
+desktop/release/
+desktop/out/
+
+# ========== 编辑器 / 系统 ==========
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ========== 临时文件 ==========
+*.tmp
+*.bak
+*.orig

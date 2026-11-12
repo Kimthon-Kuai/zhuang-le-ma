@@ -1,0 +1,127 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+  body {
+    @apply bg-ink-950 font-body text-slate-200 antialiased;
+    background-image:
+      radial-gradient(900px 400px at 0% 0%, rgba(108, 141, 255, 0.09), transparent 60%),
+      repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.012) 0 1px, transparent 1px 3px);
+  }
+  :focus-visible {
+    outline: 2px solid #7dffa8;
+    outline-offset: 2px;
+  }
+  ::-webkit-scrollbar {
+    width: 9px;
+    height: 9px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #252b4d;
+    border-radius: 999px;
+  }
+}
+
+@layer components {
+  .panel {
+    @apply rounded-xl border border-white/10 bg-ink-900/70;
+  }
+  .btn {
+    @apply inline-flex h-9 items-center justify-center gap-1.5 rounded-lg px-3 font-display text-[13px]
+      font-semibold transition-colors disabled:pointer-events-none disabled:opacity-45 [&_svg]:size-3.5;
+  }
+  .btn-primary {
+    @apply btn bg-tape text-white hover:bg-[#ff6472];
+  }
+  .btn-ghost {
+    @apply btn text-slate-300 hover:bg-white/[0.07] hover:text-white;
+  }
+  .btn-outline {
+    @apply btn border border-white/15 text-slate-200 hover:border-white/30 hover:bg-white/[0.05];
+  }
+  .btn-danger {
+    @apply btn border border-tape/35 bg-tape/10 text-tape-soft hover:bg-tape/20;
+  }
+  .field {
+    @apply h-10 w-full rounded-lg border border-white/10 bg-ink-950/70 px-3 font-body text-[14px] text-white
+      placeholder:text-slate-600 focus:border-tape/60 focus:outline-none;
+  }
+  .tag {
+    @apply inline-flex items-center gap-1 rounded border border-white/10 bg-white/[0.05] px-1.5 py-0.5
+      font-mono text-[10.5px] text-slate-400;
+  }
+  .th {
+    @apply border-b border-white/10 px-3 py-2 text-left font-mono text-[10.5px] uppercase tracking-wider text-slate-500;
+  }
+  .td {
+    @apply border-b border-white/[0.05] px-3 py-2.5 align-top text-[13px];
+  }
+}
+
+/* Markdown 预览 */
+.md h2 {
+  @apply mb-2 mt-5 font-display text-[16px] font-bold text-white;
+}
+.md h3 {
+  @apply mb-1.5 mt-4 font-display text-[14px] font-semibold text-slate-100;
+}
+.md p {
+  @apply my-2 text-[13.5px] leading-relaxed;
+}
+.md ul,
+.md ol {
+  @apply my-2 list-disc space-y-1 pl-5 text-[13.5px];
+}
+.md code {
+  @apply rounded bg-ink-800 px-1 py-0.5 font-mono text-[12px] text-label;
+}
+.md pre {
+  @apply my-3 overflow-auto rounded-lg border border-white/10 bg-ink-950 p-3;
+}
+.md pre code {
+  @apply bg-transparent p-0 text-[12px] text-slate-300;
+}
+.md a {
+  @apply text-electric underline underline-offset-2;
+}
+.md blockquote {
+  @apply my-3 border-l-2 border-label/50 pl-3 text-slate-400;
+}
+
+.hljs {
+  background: transparent !important;
+  padding: 0 !important;
+  color: #d6dcf5;
+}
+.hljs-comment,
+.hljs-quote {
+  color: #6b7394;
+  font-style: italic;
+}
+.hljs-keyword,
+.hljs-built_in,
+.hljs-selector-tag {
+  color: #ff8a95;
+}
+.hljs-string,
+.hljs-attr {
+  color: #f7e6b5;
+}
+.hljs-number,
+.hljs-literal {
+  color: #7dffa8;
+}
+.hljs-title,
+.hljs-section,
+.hljs-variable {
+  color: #9db4ff;
+}
+.hljs-meta {
+  color: #ffb86b;
+}
