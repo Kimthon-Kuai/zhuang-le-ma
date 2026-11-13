@@ -46,8 +46,8 @@ AI_TIMEOUT=120
 AI_MAX_TOKENS=6000
 
 # ---- 管理后台 ----
-ADMIN_PASSWORD=zhuanglema
-ADMIN_SECRET=please-change-this-secret
+ADMIN_PASSWORD=change-me
+ADMIN_SECRET=change-me-to-a-long-random-string
 ADMIN_TOKEN_TTL=43200
 
 # ---- 服务 ----
